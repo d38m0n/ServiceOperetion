@@ -12,6 +12,7 @@ import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Stream;
 
 @Service
 public class ItemService {
@@ -24,6 +25,14 @@ public class ItemService {
         return itemRepository.findAll();
     }
 
+    public Item getAllByIDAPMItems(String id) {
+
+
+        return itemRepository.findAll().stream()
+                .filter(item -> item.getApmNumber().equals(id))
+                .findFirst()
+                .orElseThrow();
+    }
     public List<ItemDTO> getItemsDTO() {
         ModelMapper modelMapper = new ModelMapper();
         return Arrays.asList(modelMapper.map(itemRepository.findAll(), ItemDTO[].class));

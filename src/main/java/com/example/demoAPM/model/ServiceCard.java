@@ -11,14 +11,20 @@ public class ServiceCard {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String aPMNumber;
+    private String worker;
+
     private String dateIssue;
-    private String personWork;
+    private String timeIssue;
+
+
     private String dateStartWork;
     private String dateStopWork;
+
     private String distance;
     private String timeWork;
     private String timeDrive;
-    private String description;
+
+    private String messagesCustomer;
     private String descriptionWorker;
     private String status;
 
@@ -26,43 +32,33 @@ public class ServiceCard {
 
     }
 
-    public ServiceCard(Long id, String aPMNumber, String dateIssue, String personWork, String dateStartWork, String dateStopWork, String distance, String timeWork, String timeDrive, String description, String descriptionWorker, String status) {
+    public ServiceCard(Long id,
+                       String aPMNumber,
+                       String worker,
+                       String dateIssue,
+                       String timeIssue,
+                       String dateStartWork,
+                       String dateStopWork,
+                       String distance,
+                       String timeWork,
+                       String timeDrive,
+                       String messagesCustomer,
+                       String descriptionWorker,
+                       String status) {
+
         this.id = id;
         this.aPMNumber = aPMNumber;
+        this.worker = worker;
         this.dateIssue = dateIssue;
-        this.personWork = personWork;
+        this.timeIssue = timeIssue;
         this.dateStartWork = dateStartWork;
         this.dateStopWork = dateStopWork;
         this.distance = distance;
         this.timeWork = timeWork;
         this.timeDrive = timeDrive;
-        this.description = description;
+        this.messagesCustomer = messagesCustomer;
         this.descriptionWorker = descriptionWorker;
         this.status = status;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    public String getDescriptionWorker() {
-        return descriptionWorker;
-    }
-
-    public void setDescriptionWorker(String descriptionWorker) {
-        this.descriptionWorker = descriptionWorker;
-    }
-
-    public String getaPMNumber() {
-        return aPMNumber;
-    }
-
-    public void setaPMNumber(String aPMNumber) {
-        this.aPMNumber = aPMNumber;
     }
 
     public Long getId() {
@@ -73,6 +69,22 @@ public class ServiceCard {
         this.id = id;
     }
 
+    public String getaPMNumber() {
+        return aPMNumber;
+    }
+
+    public void setaPMNumber(String aPMNumber) {
+        this.aPMNumber = aPMNumber;
+    }
+
+    public String getWorker() {
+        return worker;
+    }
+
+    public void setWorker(String worker) {
+        this.worker = worker;
+    }
+
     public String getDateIssue() {
         return dateIssue;
     }
@@ -81,12 +93,12 @@ public class ServiceCard {
         this.dateIssue = dateIssue;
     }
 
-    public String getPersonWork() {
-        return personWork;
+    public String getTimeIssue() {
+        return timeIssue;
     }
 
-    public void setPersonWork(String personWork) {
-        this.personWork = personWork;
+    public void setTimeIssue(String timeIssue) {
+        this.timeIssue = timeIssue;
     }
 
     public String getDateStartWork() {
@@ -129,11 +141,27 @@ public class ServiceCard {
         this.timeDrive = timeDrive;
     }
 
-    public String getDescription() {
-        return description;
+    public String getMessagesCustomer() {
+        return messagesCustomer;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setMessagesCustomer(String messagesCustomer) {
+        this.messagesCustomer = messagesCustomer;
+    }
+
+    public String getDescriptionWorker() {
+        return descriptionWorker;
+    }
+
+    public void setDescriptionWorker(String descriptionWorker) {
+        this.descriptionWorker = descriptionWorker;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }

@@ -26,7 +26,7 @@
         <tr>
             <th scope="col">APM NUMBER</th>
             <th scope="col">DATE ISSUE</th>
-            <th scope="col">WORKER</th>
+            <th scope="col">TIME ISSUE</th>
             <th scope="col">DATA START</th>
             <th scope="col">DATA STOP</th>
             <th scope="col">DISTANCE</th>
@@ -41,17 +41,16 @@
         <tr th:each="allServiceCard : ${allServiceCard}">
             <td th:text="${allServiceCard.aPMNumber}">Example</td>
             <td th:text="${allServiceCard.dateIssue}">Example</td>
-            <td th:text="${allServiceCard.personWork}">Example</td>
+            <td th:text="${allServiceCard.timeIssue}">Example</td>
             <td th:text="${allServiceCard.dateStartWork}">Example</td>
             <td th:text="${allServiceCard.dateStopWork}">Example</td>
             <td th:text="${allServiceCard.distance}">Example</td>
             <td th:text="${allServiceCard.timeWork}">Example</td>
             <td th:text="${allServiceCard.timeDrive}">Example</td>
-            <td th:text="${allServiceCard.description}">Example</td>
+            <td th:text="${allServiceCard.messagesCustomer}">Example</td>
             <td th:text="${allServiceCard.status}">Example</td>
             <td>
-                <a th:href="'/serviceOrders/worker/' + ${allServiceCard.id}"><i title="Job" class="fas fa-wrench"></i></a>
-                <a th:href="'/serviceOrders/delete/' + ${allServiceCard.id}"><i title="Delete" class="fas fa-trash"></i></a></td>
+                <a th:href="'/serviceOrders/worker/' + ${allServiceCard.id}"><i class="fas fa-play"></i></a>
         </tr>
         </tbody>
     </table>

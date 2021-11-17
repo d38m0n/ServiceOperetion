@@ -35,7 +35,7 @@ public class IndexController {
     }
 
     @GetMapping(value = "/allAPM")
-    public List<Item> findAllItems() {
+    public List<Item> findAllAPM() {
         return itemService.getAllItems();
     }
 
@@ -44,6 +44,7 @@ public class IndexController {
     public Item findItemById(@PathVariable(value = "id") Long id) {
         return itemService.getItemById(id);
     }
+    @GetMapping(value = "/findAPM/{id}")
 
 
     // END POINT TO DELETE AN Item

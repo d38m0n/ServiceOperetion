@@ -68,7 +68,7 @@
                     <span class="input-group-text">Description</span>
                     <input class="form-control"
                            type="text"
-                           th:field="${serviceCard.description}"
+                           th:field="${serviceCard.messagesCustomer}"
                            required
                     />
                 </div>
@@ -96,10 +96,10 @@
         </thead>
         <tbody id="issues">
         <tr th:each="allServiceCards : ${allServiceCards}">
-            <td th:text="${allServiceCards.personWork}">Example</td>
+            <td th:text="${allServiceCards.worker}">Example</td>
             <td th:text="${allServiceCards.dateStartWork}">Example</td>
             <td th:text="${allServiceCards.dateIssue}">Example</td>
-            <td th:text="${allServiceCards.description}">Example</td>
+            <td th:text="${allServiceCards.messagesCustomer}">Example</td>
             <td th:text="${allServiceCards.descriptionWorker}">Example</td>
             <td> <a th:href="'/serviceOrders/worker/' + ${allServiceCards.id}"><i class="fas fa-wrench"></i></a>
                 <a th:href="'/serviceOrders/edit/' + ${allServiceCards.id}"><i class="fas fa-edit"></i></a>

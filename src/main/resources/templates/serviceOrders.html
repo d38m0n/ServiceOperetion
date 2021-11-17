@@ -26,14 +26,11 @@
         <tr>
             <th scope="col">APM NUMBER</th>
             <th scope="col">DATE ISSUE</th>
+            <th scope="col">Time ISSUE</th>
+            <th scope="col">Status</th>
             <th scope="col">WORKER</th>
-            <th scope="col">DATA START</th>
-            <th scope="col">DATA STOP</th>
-            <th scope="col">DISTANCE</th>
-            <th scope="col">TIME WORK</th>
-            <th scope="col">TIME DRIVE</th>
-            <th scope="col">DESCRIPTION</th>
-            <th scope="col">DESCRIPTION Worker</th>
+            <th scope="col">D CUSTOMER</th>
+            <th scope="col">D Worker</th>
             <th scope="col">ACTION</th>
         </tr>
         </thead>
@@ -41,16 +38,13 @@
         <tr th:each="allServiceCard : ${allServiceCard}">
             <td th:text="${allServiceCard.aPMNumber}">Example</td>
             <td th:text="${allServiceCard.dateIssue}">Example</td>
-            <td th:text="${allServiceCard.personWork}">Example</td>
-            <td th:text="${allServiceCard.dateStartWork}">Example</td>
-            <td th:text="${allServiceCard.dateStopWork}">Example</td>
-            <td th:text="${allServiceCard.distance}">Example</td>
-            <td th:text="${allServiceCard.timeWork}">Example</td>
-            <td th:text="${allServiceCard.timeDrive}">Example</td>
-            <td th:text="${allServiceCard.description}">Example</td>
+            <td th:text="${allServiceCard.timeIssue}">Example</td>
+            <td th:text="${allServiceCard.status}">Example</td>
+            <td th:text="${allServiceCard.worker}">Example</td>
+            <td th:text="${allServiceCard.messagesCustomer}">Example</td>
             <td th:text="${allServiceCard.descriptionWorker}">Example</td>
             <td>
-                <a th:href="'/serviceOrders/worker/' + ${allServiceCard.id}"><i title="Job" class="fas fa-wrench"></i></a>
+                <a th:href="'/Show/' + ${allServiceCard.aPMNumber}"><i class="fas fa-info-circle"></i></a>
                 <a th:href="'/serviceOrders/edit/' + ${allServiceCard.id}"><i title="Edit" class="fas fa-edit"></i></a>
                 <a th:href="'/serviceOrders/delete/' + ${allServiceCard.id}"><i title="Delete" class="fas fa-trash"></i></a></td>
         </tr>

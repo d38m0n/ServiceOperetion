@@ -10,5 +10,5 @@ import java.util.List;
 public interface ServiceCardRepository extends JpaRepository<ServiceCard, Long> {
 
     List<ServiceCard> findByaPMNumber(String aPMNumber);
-    List<ServiceCard> findByPersonWork(String personID);
+    List<ServiceCard> findByWorker(String personID);
 }

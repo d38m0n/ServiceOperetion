@@ -58,7 +58,18 @@
                     <span class="input-group-text w-50">Worker</span>
                     <input class="form-control"
                            type="text"
-                           th:field="${serviceCard.personWork}"
+                           th:field="${serviceCard.worker}"
+                           readonly="readonly"
+                    />
+                </div>
+            </tr>
+
+            <tr>
+                <div class="input-group ">
+                    <span class="input-group-text">Customer Report</span>
+                    <input class="form-control"
+                           type="text"
+                           th:field="${serviceCard.messagesCustomer}"
                            readonly="readonly"
                     />
                 </div>
@@ -69,34 +80,27 @@
                     <input class="form-control"
                            type="date"
                            th:field="${serviceCard.dateStartWork}"
-                           readonly="readonly"
+                           required
 
                     />
                 </div>
             </tr>
             <tr>
                 <div class="input-group ">
-                    <span class="input-group-text">Description</span>
-                    <input class="form-control"
+                    <span class="input-group-text">Status</span>
+                    <input class="form-control w-50 text-right" list="datalistOptions" id="exampleDataList"
+                           placeholder="Type to search..."
                            type="text"
-                           th:field="${serviceCard.description}"
-                           readonly="readonly"
-                    />
+                           th:field="${serviceCard.status}" required >
+                    <datalist id="datalistOptions">
+                        <option value="DONE">
+                        <option value="IN PROGRESS">
+                        <option value="WAITING">
+                        <option value="LOST">
+                        <option value="NOT TO ME">
+                    </datalist>
+
                 </div>
-            </tr>
-            <tr>
-                <div class="input-group ">
-                <span class="input-group-text">Status</span>
-                <input class="form-control w-50 text-right" list="datalistOptions" id="exampleDataList" placeholder="Type to search..."
-                       type="text"
-                       th:field="${serviceCard.status}">
-                <datalist id="datalistOptions">
-                    <option value="DONE">
-                    <option value="IN PROGRESS">
-                    <option value="WAITING">
-                    <option value="LOST">
-                    <option value="NOT TO ME">
-                </datalist></div>
 
             </tr>
             <tr>
@@ -105,17 +109,17 @@
                     <input class="form-control"
                            type="date"
                            th:field="${serviceCard.dateStopWork}"
-                           required
+
                     />
                 </div>
             </tr>
             <tr>
                 <div class="input-group">
-                    <span class="input-group-text w-50">Distance</span>
+                    <span class="input-group-text w-50">Distance KM</span>
                     <input class="form-control"
                            type="text"
                            th:field="${serviceCard.distance}"
-                           required
+
                     />
                 </div>
             </tr>
@@ -125,7 +129,7 @@
                     <input class="form-control"
                            type="text"
                            th:field="${serviceCard.timeWork}"
-                           required
+
                     />
                 </div>
             </tr>
@@ -135,7 +139,7 @@
                     <input class="form-control"
                            type="text"
                            th:field="${serviceCard.timeDrive}"
-                           required
+
                     />
                 </div>
             </tr>
@@ -145,7 +149,7 @@
                     <input class="form-control"
                            type="text"
                            th:field="${serviceCard.descriptionWorker}"
-                           required
+
                     />
                 </div>
             </tr>

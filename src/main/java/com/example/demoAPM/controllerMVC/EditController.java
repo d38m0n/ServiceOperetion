@@ -25,6 +25,14 @@ public class EditController {
         return mav;
     }
 
+    @RequestMapping("/Show/{id}")
+    public ModelAndView showEditItemByIDAPMPage(@PathVariable(name = "id") String id) {
+        ModelAndView mav = new ModelAndView("edit");
+        Item item = itemService.getAllByIDAPMItems(id);
+        mav.addObject("item", item);
+        return mav;
+    }
+
     @PostMapping(value = "/updateAPM")
     public String updateEmployee(
             @ModelAttribute("item") Item item)

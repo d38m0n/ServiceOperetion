@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
-
 import java.util.List;
 
 
@@ -19,6 +18,7 @@ import java.util.List;
 public class ServiceCardController {
     @Autowired
     private ServiceCardService serviceCardService;
+
 
     @RequestMapping("/show")
     public String viewAllServiceCard(
@@ -56,6 +56,7 @@ public class ServiceCardController {
         return mav;
     }
 
+
     @RequestMapping("/worker/{idSC}")
     public ModelAndView showWorkerServiceCardPage(@PathVariable(name = "idSC") Long id) {
         ModelAndView mav = new ModelAndView("serviceCardWorker");
@@ -80,7 +81,17 @@ public class ServiceCardController {
     public String addNewServiceCard(
             @ModelAttribute("serviceCard") ServiceCard serviceCard) {
         serviceCardService.addNewServiceCard(serviceCard);
-        return "redirect:/serviceOrders/new/" + serviceCard.getaPMNumber();
+        return "redirect:/serviceOrders/show" ;
+    }
+// Report from customer page issue
+    @RequestMapping("/customer/{idAPM}")
+    public String addNewCustomerIssuePage(
+            Model model,
+            @PathVariable(name = "idAPM") String id) {
+        ServiceCard serviceCard = new ServiceCard();
+        serviceCard.setaPMNumber(id);
+        model.addAttribute("im", serviceCard);
+        return "report";
     }
 
     @PostMapping(value = "/update")
@@ -94,7 +105,7 @@ public class ServiceCardController {
     public String updateServiceCardWorker(
             @ModelAttribute("serviceCard") ServiceCard serviceCard) {
         serviceCardService.addNewServiceCard(serviceCard);
-        return "redirect:/serviceOrders/worker-view/" + serviceCard.getPersonWork();
+        return "redirect:/serviceOrders/worker-view/" + serviceCard.getWorker();
     }
 
     @RequestMapping("/delete/{id}")

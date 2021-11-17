@@ -22,7 +22,7 @@ public class ServiceCardService {
     }
 
     public List<ServiceCard> getAPMNameServiceCardWorkerID(String idWorker) {
-        return serviceCardRepository.findByPersonWork(idWorker);
+        return serviceCardRepository.findByWorker(idWorker);
     }
 
     // FETCHING ServiceCard BY ID
